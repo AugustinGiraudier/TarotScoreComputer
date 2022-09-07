@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 650 237" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-2062.35,-5182.92)">
+        <g transform="matrix(1,0,0,1.65026,3781.37,129.627)">
+            <g transform="matrix(0.732933,0,0,0.605963,-3300.26,912.052)">
+                <path d="M3043.73,3548.17L2216.65,3548.17C2183.96,3548.17 2157.42,3574.71 2157.42,3607.4L2157.42,3725.85C2157.42,3758.54 2183.96,3785.08 2216.65,3785.08L3043.73,3785.08L3043.73,3548.17Z" style="fill:rgb(144,144,144);"/>
+                <clipPath id="_clip1">
+                    <path d="M3043.73,3548.17L2216.65,3548.17C2183.96,3548.17 2157.42,3574.71 2157.42,3607.4L2157.42,3725.85C2157.42,3758.54 2183.96,3785.08 2216.65,3785.08L3043.73,3785.08L3043.73,3548.17Z"/>
+                </clipPath>
+                <g clip-path="url(#_clip1)">
+                    <g transform="matrix(1.36438,0,0,1,-85.7873,121.139)">
+                        <text x="1764.51px" y="3584.84px" style="font-family:'LEMONMILK-Regular', 'LEMON MILK';font-size:100px;fill:white;">Sc<tspan x="1896.54px " y="3584.84px ">o</tspan>res</text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

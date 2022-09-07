@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarot Calculator</title>
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="prog.js"></script>
+</head>
+<body onload="onBodyLoad();">
+    
+
+<!-- Header -->
+
+<div class="flex-center">
+    <img id="title-img" src="Assets/title.svg" alt="">
+</div>
+
+<!-- ////////////// Pre-Game Part ////////////// -->
+
+<div id="start-part">
+    <!-- Add player -->
+
+    <div class="flex-center spacer">
+        <input type="text" id="inp-new-player" name="" placeholder="Entrez un nouveau nom de joueur" id="">
+        <img id="btn-add" onclick="addPlayer()" class="grow" src="Assets/btn-add.svg" alt="">
+    </div>
+
+    <div class="flex-center spacer">
+        <div id="player-contener">
+            <!-- Player tickets -->
+            <p id="txt-no-player" class="text-white text-sm spacer-sm">Il n'y a pas de joueur...</p>
+        </div>
+    </div>
+
+    <!-- btn start Game -->
+    <div id="div-btn-start-game" class="remove spacer">
+        <div class="flex-center"> 
+            <img id="btn-start" onclick="startGame()" class="grow" src="Assets/btn-start.svg" alt="">
+        </div>
+    </div>
+</div>
+
+
+<!-- ////////////// Game Part ////////////// -->
+
+<div id="game-part" class="remove">
+    <div class="flex-center spacer">
+        <img id="switch-score" class="btn-switch switch-off" src="Assets/btn-scores-off.svg" alt="">
+        <img id="switch-partie"  class="btn-switch grow pointable" src="Assets/btn-partie.svg" alt="">
+    </div>
+
+
+    <div id="scores-part">
+
+        <p>Scores</p>
+
+    </div>
+
+    <div id="partie-part" class="remove">
+
+        <p>partie</p>
+
+    </div>
+
+
+
+</div>
+
+
+<footer>
+    <div id="line"></div>
+    <div class="flex-center">
+        <p class="text-white text-sm spacer-sm">Augustin Giraudier - 2022</p>
+    </div>
+</footer>
+
+</body>
+</html>
