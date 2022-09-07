@@ -41,7 +41,7 @@ function addPlayer(){
 
     if(players.length == 1)
         document.getElementById('txt-no-player').classList.add('remove');
-    else if(players.length == 2)
+    else if(players.length == 3)
         document.getElementById('div-btn-start-game').classList.remove('remove');
 
     document.getElementById('player-contener').innerHTML += getPlayerTicket(name);
@@ -52,13 +52,13 @@ function removePlayer(pName){
     players.pop(pName);
     if(players.length == 0)
         document.getElementById('txt-no-player').classList.remove('remove');
-    if(players.length < 2)
+    if(players.length < 3)
         document.getElementById('div-btn-start-game').classList.add('remove');
 }
 
 function getPlayerTicket(pName){
     let pId = pName.replace("'","///");
-    let degree = (Math.random() * (4))-2;
+    let degree = (Math.random() * (6))-3;
     return `
     <div class="player-ticket" style="transform: rotate(`+ degree +`deg);" onmouseenter="mouseEnterTicket('`+ pId +`')" onmouseleave="mouseLeaveTicket('`+ pId +`')" id="`+ pId +`-ticket">
         <div class="player-name">
@@ -79,9 +79,21 @@ function mouseLeaveTicket(pName){
 function startGame(){
 
     // Build the score tab :
+    let strPlayersOptions = '';
     for(let player of players){
-        game.push({"p":player,"score":0});
+        game.push({"player":player,"score":0});
+        strPlayersOptions += "<option value='"+ player +"'>"+ player +"</option>";
     }
+    document.getElementById('joueurs').innerHTML = strPlayersOptions;
+
+    // Put player names in the score tab
+    let playersStr = '';
+    for(let player of game)
+        playersStr += "<th><p class='text-white text-sm'>"+ player['player'] +"</p></th>"
+    document.getElementById('table-players-encart').innerHTML = playersStr;
+
+    // put a first game with 0 score
+    addLineWithScores();
 
 
     // display right screens
@@ -129,4 +141,29 @@ function switchButtons(){
     A.classList.add('grow','pointable');
     B.classList.add('switch-off');
     B.classList.remove('grow','pointable');
+}
+function addLineWithScores(){
+
+    let strScores = '<tr>';
+
+    for(let player of game){
+        strScores += "<td>"+ player['score'] +"</td>"
+    }
+    strScores += "</tr>";
+
+    document.getElementById('table-score-encart').innerHTML += strScores;
+}
+
+function computeNewGame(){
+
+    let joueur = document.getElementById('joueurs').value;
+    let score = document.getElementById('inp-game-score').value;
+    let annonce = document.getElementById('annonces').value;
+    let bouts = document.getElementById('bouts').value;
+
+    if(score == '')
+        return;
+
+
+    addLineWithScores();
 }
