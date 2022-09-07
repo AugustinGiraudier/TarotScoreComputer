@@ -157,13 +157,71 @@ function addLineWithScores(){
 function computeNewGame(){
 
     let joueur = document.getElementById('joueurs').value;
-    let score = document.getElementById('inp-game-score').value;
+    let score = parseInt(document.getElementById('inp-game-score').value);
     let annonce = document.getElementById('annonces').value;
-    let bouts = document.getElementById('bouts').value;
+    let bouts = parseInt(document.getElementById('bouts').value);
+    let petitBout = document.getElementById('cb-petit-au-bout').checked;
 
     if(score == '')
         return;
 
+    let aim;
+    switch (bouts) {
+        case 0:
+            aim = 56;
+            break;
+        case 1:
+            aim = 51;
+            break;
+        case 2:
+            aim = 41;
+            break;
+        case 3:
+            aim = 36;
+            break;
+    }
+
+    let facteur;
+    switch (annonce) {
+        case "petite":
+            facteur = 1;
+            break;
+        case "garde":
+            facteur = 2;
+            break;
+        case "gardeS":
+            facteur = 4;
+            break;
+        case "gardeC":
+            facteur = 6;
+            break;
+    }
+
+    let diff = score - aim;
+
+    let count = (25 + Math.abs(diff))*facteur;
+    if(petitBout)
+        count += 10*facteur;
+    
+    let PlayerScore, OthersScore;
+    if(diff > 0){
+        OthersScore = -count;
+        PlayerScore = (players.length -1) * count;
+    }
+    else{
+        OthersScore = count;
+        PlayerScore = -((players.length -1) * count);
+    }
+
+    for(let player of game){
+        if(player['player'] == joueur)
+            player['score'] += PlayerScore;
+        else
+            player['score'] += OthersScore;
+    }
 
     addLineWithScores();
+
+    screen = 'scores';
+    clickSwitch('scores');
 }
